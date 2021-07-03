@@ -1,0 +1,15 @@
+type Activity @model {
+  id: ID!
+  name: String!
+  description: String
+  userID:ID!
+  userName:String!
+  amount:Int
+  subActivities:[SubActivity]
+}
+
+type SubActivity @model{
+name:String!
+description:String
+amount:Int
+}
