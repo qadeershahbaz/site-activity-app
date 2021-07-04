@@ -13,16 +13,24 @@ export const createActivity = /* GraphQL */ `
       userID
       userName
       amount
+      document
       subActivities {
         id
         name
         description
         amount
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -38,16 +46,24 @@ export const updateActivity = /* GraphQL */ `
       userID
       userName
       amount
+      document
       subActivities {
         id
         name
         description
         amount
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -63,16 +79,24 @@ export const deleteActivity = /* GraphQL */ `
       userID
       userName
       amount
+      document
       subActivities {
         id
         name
         description
         amount
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -86,6 +110,9 @@ export const createSubActivity = /* GraphQL */ `
       name
       description
       amount
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -101,6 +128,9 @@ export const updateSubActivity = /* GraphQL */ `
       name
       description
       amount
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -116,6 +146,9 @@ export const deleteSubActivity = /* GraphQL */ `
       name
       description
       amount
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }

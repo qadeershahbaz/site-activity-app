@@ -10,16 +10,24 @@ export const getActivity = /* GraphQL */ `
       userID
       userName
       amount
+      document
       subActivities {
         id
         name
         description
         amount
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -37,18 +45,71 @@ export const listActivities = /* GraphQL */ `
         userID
         userName
         amount
+        document
         subActivities {
           id
           name
           description
           amount
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
+      startedAt
+    }
+  }
+`;
+export const syncActivities = /* GraphQL */ `
+  query SyncActivities(
+    $filter: ModelActivityFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncActivities(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        name
+        description
+        userID
+        userName
+        amount
+        document
+        subActivities {
+          id
+          name
+          description
+          amount
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+      startedAt
     }
   }
 `;
@@ -59,6 +120,9 @@ export const getSubActivity = /* GraphQL */ `
       name
       description
       amount
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -76,10 +140,43 @@ export const listSubActivities = /* GraphQL */ `
         name
         description
         amount
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
+    }
+  }
+`;
+export const syncSubActivities = /* GraphQL */ `
+  query SyncSubActivities(
+    $filter: ModelSubActivityFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncSubActivities(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        name
+        description
+        amount
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
     }
   }
 `;

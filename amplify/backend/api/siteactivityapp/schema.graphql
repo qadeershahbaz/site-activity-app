@@ -1,15 +1,18 @@
-type Activity @model {
+type Activity @model @auth(rules: [{allow: private}, {allow: public}, {allow: owner}]) {
   id: ID!
   name: String!
   description: String
-  userID:ID!
-  userName:String!
-  amount:Int
-  subActivities:[SubActivity]
+  userID: ID!
+  userName: String!
+  amount: Int
+  document: [String]
+  subActivities: [SubActivity]
 }
 
-type SubActivity @model{
-name:String!
-description:String
-amount:Int
+type SubActivity @model @auth(rules: [{allow: private}]) {
+  id:ID!
+  name: String!
+  description: String
+  amount: Int
 }
+ 

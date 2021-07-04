@@ -14,15 +14,31 @@
       "output": {
         "authConfig": {
           "defaultAuthentication": {
-            "authenticationType": "API_KEY",
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 7,
-              "description": "demo"
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authsiteactivityappd9d5cd91_userpool_d9d5cd91"
             }
           },
-          "additionalAuthenticationProviders": []
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "API_KEY",
+              "apiKeyConfig": {
+                "apiKeyExpirationDays": 30,
+                "description": "api key description"
+              }
+            },
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ]
         }
       }
+    }
+  },
+  "storage": {
+    "docs": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
     }
   }
 }
