@@ -13,7 +13,17 @@ export const createActivity = /* GraphQL */ `
       userID
       userName
       amount
-      document
+      document {
+        id
+        name
+        secret
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+      }
       subActivities {
         id
         name
@@ -24,6 +34,7 @@ export const createActivity = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       _version
       _deleted
@@ -46,7 +57,17 @@ export const updateActivity = /* GraphQL */ `
       userID
       userName
       amount
-      document
+      document {
+        id
+        name
+        secret
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+      }
       subActivities {
         id
         name
@@ -57,6 +78,7 @@ export const updateActivity = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       _version
       _deleted
@@ -79,7 +101,17 @@ export const deleteActivity = /* GraphQL */ `
       userID
       userName
       amount
-      document
+      document {
+        id
+        name
+        secret
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+      }
       subActivities {
         id
         name
@@ -90,6 +122,7 @@ export const deleteActivity = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       _version
       _deleted
@@ -115,6 +148,7 @@ export const createSubActivity = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -133,6 +167,7 @@ export const updateSubActivity = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -151,6 +186,61 @@ export const deleteSubActivity = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
+      owner
+    }
+  }
+`;
+export const createDocument = /* GraphQL */ `
+  mutation CreateDocument(
+    $input: CreateDocumentInput!
+    $condition: ModelDocumentConditionInput
+  ) {
+    createDocument(input: $input, condition: $condition) {
+      id
+      name
+      secret
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const updateDocument = /* GraphQL */ `
+  mutation UpdateDocument(
+    $input: UpdateDocumentInput!
+    $condition: ModelDocumentConditionInput
+  ) {
+    updateDocument(input: $input, condition: $condition) {
+      id
+      name
+      secret
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const deleteDocument = /* GraphQL */ `
+  mutation DeleteDocument(
+    $input: DeleteDocumentInput!
+    $condition: ModelDocumentConditionInput
+  ) {
+    deleteDocument(input: $input, condition: $condition) {
+      id
+      name
+      secret
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
     }
   }
 `;

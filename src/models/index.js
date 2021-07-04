@@ -4,9 +4,10 @@ import { schema } from './schema';
 
 
 
-const { Activity, SubActivity } = initSchema(schema);
+const { Activity, Document, SubActivity } = initSchema(schema);
 
 export {
   Activity,
+  Document,
   SubActivity
 };

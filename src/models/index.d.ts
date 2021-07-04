@@ -11,11 +11,23 @@ export declare class Activity {
   readonly userID: string;
   readonly userName: string;
   readonly amount?: number;
-  readonly document?: (string | null)[];
+  readonly SubActivities?: (SubActivity | null)[];
+  readonly Documents?: (Document | null)[];
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<Activity>);
   static copyOf(source: Activity, mutator: (draft: MutableModel<Activity>) => MutableModel<Activity> | void): Activity;
+}
+
+export declare class Document {
+  readonly id: string;
+  readonly name: string;
+  readonly secret?: boolean;
+  readonly activityID?: string;
+  readonly createdAt?: string;
+  readonly updatedAt?: string;
+  constructor(init: ModelInit<Document>);
+  static copyOf(source: Document, mutator: (draft: MutableModel<Document>) => MutableModel<Document> | void): Document;
 }
 
 export declare class SubActivity {
@@ -23,6 +35,7 @@ export declare class SubActivity {
   readonly name: string;
   readonly description?: string;
   readonly amount?: number;
+  readonly activityID?: string;
   readonly createdAt?: string;
   readonly updatedAt?: string;
   constructor(init: ModelInit<SubActivity>);

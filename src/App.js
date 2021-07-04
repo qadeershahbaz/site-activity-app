@@ -1,22 +1,28 @@
-import logo from './logo.svg';
-import './App.scss';
-import 'antd-mobile/dist/antd-mobile.css'
-import ActivityList from './containers/activity-list/ActivityList.container'
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
+import logo from "./logo.svg";
+import "./App.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-
+import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+import { Switch, Route, Redirect } from "react-router-dom";
+import AppContainer from "./containers/app-container/AppContainer";
+import routes from "./app-routes/appRoutes";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-       Site Activity App Launch
-      </header>
-    <ActivityList/>
-      <AmplifySignOut/>
+      <AppContainer>
+        <Route exact path="/">
+          <Redirect to="/activity" />
+        </Route>
+
+        {routes.map(({ path, name, Component }, key) => {
+          return <Route exact path={path} component={Component} />;
+        })}
+
+        
+      </AppContainer>
     </div>
   );
 }
 
 export default withAuthenticator(App);
-

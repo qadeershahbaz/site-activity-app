@@ -10,7 +10,17 @@ export const onCreateActivity = /* GraphQL */ `
       userID
       userName
       amount
-      document
+      document {
+        id
+        name
+        secret
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+      }
       subActivities {
         id
         name
@@ -21,6 +31,7 @@ export const onCreateActivity = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       _version
       _deleted
@@ -40,7 +51,17 @@ export const onUpdateActivity = /* GraphQL */ `
       userID
       userName
       amount
-      document
+      document {
+        id
+        name
+        secret
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+      }
       subActivities {
         id
         name
@@ -51,6 +72,7 @@ export const onUpdateActivity = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       _version
       _deleted
@@ -70,7 +92,17 @@ export const onDeleteActivity = /* GraphQL */ `
       userID
       userName
       amount
-      document
+      document {
+        id
+        name
+        secret
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+      }
       subActivities {
         id
         name
@@ -81,6 +113,7 @@ export const onDeleteActivity = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       _version
       _deleted
@@ -103,6 +136,7 @@ export const onCreateSubActivity = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -118,6 +152,7 @@ export const onUpdateSubActivity = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
   }
 `;
@@ -133,6 +168,52 @@ export const onDeleteSubActivity = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
+      owner
+    }
+  }
+`;
+export const onCreateDocument = /* GraphQL */ `
+  subscription OnCreateDocument {
+    onCreateDocument {
+      id
+      name
+      secret
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onUpdateDocument = /* GraphQL */ `
+  subscription OnUpdateDocument {
+    onUpdateDocument {
+      id
+      name
+      secret
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onDeleteDocument = /* GraphQL */ `
+  subscription OnDeleteDocument {
+    onDeleteDocument {
+      id
+      name
+      secret
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
     }
   }
 `;
