@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { API ,Storage} from "aws-amplify";
 import { listActivities } from "../../../graphql/queries";
 import { withRouter, Link } from "react-router-dom";
-import { Button,ListGroup } from "react-bootstrap";
+import { Button,ListGroupItem } from "react-bootstrap";
+import AppList from "../../../components/app-list/AppList";
 import DocViewer, { DocViewerRenderers } from 'react-doc-viewer'
 import './activity-list.scss'
 
@@ -36,13 +37,13 @@ const ActivityList = () => {
           </Button>
         </Link>
       </div>
-      <ListGroup>
+      <AppList>
       {activities.map((activity) => (
-       <ListGroup.Item>{activity.name}</ListGroup.Item>
+       <ListGroupItem>{activity.name}</ListGroupItem>
       ))}
   
  
-</ListGroup>
+</AppList>
 {document&&<DocViewer sandbox={false} pluginRenderers={DocViewerRenderers} documents={[document]} style={{ height: 500}} />}
 {document&&<img src={document} style={{width: 400}} />}
     

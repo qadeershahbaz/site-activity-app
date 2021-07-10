@@ -83,3 +83,70 @@ export const syncActivities = /* GraphQL */ `
     }
   }
 `;
+export const getPartners = /* GraphQL */ `
+  query GetPartners($id: ID!) {
+    getPartners(id: $id) {
+      id
+      name
+      group
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const listPartners = /* GraphQL */ `
+  query ListPartners(
+    $filter: ModelPartnersFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listPartners(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        group
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncPartners = /* GraphQL */ `
+  query SyncPartners(
+    $filter: ModelPartnersFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncPartners(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        name
+        group
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;

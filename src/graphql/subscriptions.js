@@ -61,3 +61,48 @@ export const onDeleteActivity = /* GraphQL */ `
     }
   }
 `;
+export const onCreatePartners = /* GraphQL */ `
+  subscription OnCreatePartners {
+    onCreatePartners {
+      id
+      name
+      group
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onUpdatePartners = /* GraphQL */ `
+  subscription OnUpdatePartners {
+    onUpdatePartners {
+      id
+      name
+      group
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onDeletePartners = /* GraphQL */ `
+  subscription OnDeletePartners {
+    onDeletePartners {
+      id
+      name
+      group
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;

@@ -18,3 +18,13 @@ export declare class Activity {
   constructor(init: ModelInit<Activity>);
   static copyOf(source: Activity, mutator: (draft: MutableModel<Activity>) => MutableModel<Activity> | void): Activity;
 }
+
+export declare class Partners {
+  readonly id: string;
+  readonly name: string;
+  readonly group?: string;
+  readonly createdAt?: string;
+  readonly updatedAt?: string;
+  constructor(init: ModelInit<Partners>);
+  static copyOf(source: Partners, mutator: (draft: MutableModel<Partners>) => MutableModel<Partners> | void): Partners;
+}

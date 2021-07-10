@@ -70,3 +70,57 @@ export const deleteActivity = /* GraphQL */ `
     }
   }
 `;
+export const createPartners = /* GraphQL */ `
+  mutation CreatePartners(
+    $input: CreatePartnersInput!
+    $condition: ModelPartnersConditionInput
+  ) {
+    createPartners(input: $input, condition: $condition) {
+      id
+      name
+      group
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const updatePartners = /* GraphQL */ `
+  mutation UpdatePartners(
+    $input: UpdatePartnersInput!
+    $condition: ModelPartnersConditionInput
+  ) {
+    updatePartners(input: $input, condition: $condition) {
+      id
+      name
+      group
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const deletePartners = /* GraphQL */ `
+  mutation DeletePartners(
+    $input: DeletePartnersInput!
+    $condition: ModelPartnersConditionInput
+  ) {
+    deletePartners(input: $input, condition: $condition) {
+      id
+      name
+      group
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;

@@ -1,5 +1,6 @@
 import ActivityList from "../containers/activity/activity-list/ActivityList.container";
 import AddActivity from "../containers/activity/add-activity/AddActivity";
+import Partners from "../containers/partners/Partners";
 
 const routes = [
  {
@@ -13,9 +14,9 @@ const routes = [
     Component: AddActivity,
   },
   {
-    path:'partners',
+    path:'/partners',
     name: 'Partners',
-    Component:ActivityList
+    Component:Partners
   }
 ];
 

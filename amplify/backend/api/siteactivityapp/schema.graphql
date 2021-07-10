@@ -10,4 +10,9 @@ type Activity @model @auth(rules: [{allow: private}, {allow: public}, {allow: ow
 }
 
 
+type Partners  @model @auth(rules: [{allow: private}, {allow: public}, {allow: owner}]) {
+  id: ID!
+  name: String!
+  group:String
+}
 
