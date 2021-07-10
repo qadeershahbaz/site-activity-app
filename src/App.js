@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <AppContainer>
         <Route exact path="/">
-          <Redirect to="/partners" />
+          <Redirect to="/dashboard" />
         </Route>
 
         {routes.map(({ path, name, Component }, key) => {

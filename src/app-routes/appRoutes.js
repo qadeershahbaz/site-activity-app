@@ -3,6 +3,7 @@ import AddActivity from "../containers/activity/add-activity/AddActivity";
 import ViewPartners from "../containers/partners/view-partners/ViewPartners";
 import PartnerRecords from "../containers/partners/partner-records/PartnerRecords";
 import AddPartnerRecord from "../containers/partners/add-partner-records/AddPartnerRecord";
+import Dashboard from "../containers/dashboard/Dashboard";
 
 const routes = [
   {
@@ -29,6 +30,11 @@ const routes = [
     path: "/partners/partner-records/:partnerId/add-partner-record",
     name: "Add Partner Records",
     Component: AddPartnerRecord,
+  },
+  {
+    path: "/dashboard",
+    name: "Dashboard",
+    Component: Dashboard,
   },
 ];
 

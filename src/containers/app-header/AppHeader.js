@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Navbar, Nav } from "react-bootstrap";
 import AppBreadcrumb from "../../components/app-breadcrumb/AppBreadcrumb.component";
 import {  AmplifySignOut } from "@aws-amplify/ui-react";
+import { Link } from "react-router-dom";
 
 
 const AppHeader = () => {
@@ -16,7 +17,7 @@ const AppHeader = () => {
         style={{ background: "#576B77" }}
       >
         <Container style={{ textAlign: "center" }}>
-          <Navbar.Brand>Site Activity</Navbar.Brand>
+          <Link to='/'><Navbar.Brand>Site Activity</Navbar.Brand></Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
