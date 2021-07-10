@@ -150,3 +150,91 @@ export const syncPartners = /* GraphQL */ `
     }
   }
 `;
+export const getPartnerRecords = /* GraphQL */ `
+  query GetPartnerRecords($id: ID!) {
+    getPartnerRecords(id: $id) {
+      id
+      entryDate
+      amountReceived
+      previousBalance
+      totalAmount
+      AmountPaid
+      AmountPaidTo
+      Balance
+      Remarks
+      partnerId
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const listPartnerRecords = /* GraphQL */ `
+  query ListPartnerRecords(
+    $filter: ModelPartnerRecordsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listPartnerRecords(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        entryDate
+        amountReceived
+        previousBalance
+        totalAmount
+        AmountPaid
+        AmountPaidTo
+        Balance
+        Remarks
+        partnerId
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncPartnerRecords = /* GraphQL */ `
+  query SyncPartnerRecords(
+    $filter: ModelPartnerRecordsFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncPartnerRecords(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        entryDate
+        amountReceived
+        previousBalance
+        totalAmount
+        AmountPaid
+        AmountPaidTo
+        Balance
+        Remarks
+        partnerId
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;

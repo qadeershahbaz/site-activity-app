@@ -28,3 +28,20 @@ export declare class Partners {
   constructor(init: ModelInit<Partners>);
   static copyOf(source: Partners, mutator: (draft: MutableModel<Partners>) => MutableModel<Partners> | void): Partners;
 }
+
+export declare class PartnerRecords {
+  readonly id: string;
+  readonly entryDate: string;
+  readonly amountReceived: number;
+  readonly previousBalance: number;
+  readonly totalAmount: number;
+  readonly AmountPaid: number;
+  readonly AmountPaidTo?: string;
+  readonly Balance: number;
+  readonly Remarks?: string;
+  readonly partnerId: string;
+  readonly createdAt?: string;
+  readonly updatedAt?: string;
+  constructor(init: ModelInit<PartnerRecords>);
+  static copyOf(source: PartnerRecords, mutator: (draft: MutableModel<PartnerRecords>) => MutableModel<PartnerRecords> | void): PartnerRecords;
+}

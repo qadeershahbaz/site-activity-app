@@ -4,7 +4,6 @@ import { listActivities } from "../../../graphql/queries";
 import { withRouter, Link } from "react-router-dom";
 import { Button,ListGroupItem } from "react-bootstrap";
 import AppList from "../../../components/app-list/AppList";
-import DocViewer, { DocViewerRenderers } from 'react-doc-viewer'
 import './activity-list.scss'
 
 const ActivityList = () => {
@@ -44,7 +43,6 @@ const ActivityList = () => {
   
  
 </AppList>
-{document&&<DocViewer sandbox={false} pluginRenderers={DocViewerRenderers} documents={[document]} style={{ height: 500}} />}
 {document&&<img src={document} style={{width: 400}} />}
     
     </>

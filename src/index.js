@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'antd-mobile/dist/antd-mobile.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Amplify from 'aws-amplify';
 import config from './aws-exports';
-import {BrowserRouter as Router} from 'react-router-dom'
+import {BrowserRouter as Router} from 'react-router-dom';
+import enUS from 'antd-mobile/lib/locale-provider/en_US';
+import {LocaleProvider} from 'antd-mobile'
 Amplify.configure(config);
 
 
 ReactDOM.render(
   <Router>
+    <LocaleProvider locale={enUS}>
     <App />
+    </LocaleProvider>
   </Router>,
   document.getElementById('root')
 );

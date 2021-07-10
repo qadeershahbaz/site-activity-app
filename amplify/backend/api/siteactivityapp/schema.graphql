@@ -16,3 +16,17 @@ type Partners  @model @auth(rules: [{allow: private}, {allow: public}, {allow: o
   group:String
 }
 
+type PartnerRecords @model @auth(rules: [{allow: private}, {allow: public}, {allow: owner}]) {
+  id: ID!
+  entryDate: AWSDate!
+  amountReceived:Float!
+  previousBalance:Float!
+  totalAmount:Float!
+  AmountPaid:Float!
+  AmountPaidTo:String
+  Balance:Float!
+  Remarks:String
+  partnerId:ID!
+}
+
+

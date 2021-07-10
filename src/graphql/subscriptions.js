@@ -106,3 +106,69 @@ export const onDeletePartners = /* GraphQL */ `
     }
   }
 `;
+export const onCreatePartnerRecords = /* GraphQL */ `
+  subscription OnCreatePartnerRecords {
+    onCreatePartnerRecords {
+      id
+      entryDate
+      amountReceived
+      previousBalance
+      totalAmount
+      AmountPaid
+      AmountPaidTo
+      Balance
+      Remarks
+      partnerId
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onUpdatePartnerRecords = /* GraphQL */ `
+  subscription OnUpdatePartnerRecords {
+    onUpdatePartnerRecords {
+      id
+      entryDate
+      amountReceived
+      previousBalance
+      totalAmount
+      AmountPaid
+      AmountPaidTo
+      Balance
+      Remarks
+      partnerId
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const onDeletePartnerRecords = /* GraphQL */ `
+  subscription OnDeletePartnerRecords {
+    onDeletePartnerRecords {
+      id
+      entryDate
+      amountReceived
+      previousBalance
+      totalAmount
+      AmountPaid
+      AmountPaidTo
+      Balance
+      Remarks
+      partnerId
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;

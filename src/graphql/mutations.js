@@ -124,3 +124,78 @@ export const deletePartners = /* GraphQL */ `
     }
   }
 `;
+export const createPartnerRecords = /* GraphQL */ `
+  mutation CreatePartnerRecords(
+    $input: CreatePartnerRecordsInput!
+    $condition: ModelPartnerRecordsConditionInput
+  ) {
+    createPartnerRecords(input: $input, condition: $condition) {
+      id
+      entryDate
+      amountReceived
+      previousBalance
+      totalAmount
+      AmountPaid
+      AmountPaidTo
+      Balance
+      Remarks
+      partnerId
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const updatePartnerRecords = /* GraphQL */ `
+  mutation UpdatePartnerRecords(
+    $input: UpdatePartnerRecordsInput!
+    $condition: ModelPartnerRecordsConditionInput
+  ) {
+    updatePartnerRecords(input: $input, condition: $condition) {
+      id
+      entryDate
+      amountReceived
+      previousBalance
+      totalAmount
+      AmountPaid
+      AmountPaidTo
+      Balance
+      Remarks
+      partnerId
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const deletePartnerRecords = /* GraphQL */ `
+  mutation DeletePartnerRecords(
+    $input: DeletePartnerRecordsInput!
+    $condition: ModelPartnerRecordsConditionInput
+  ) {
+    deletePartnerRecords(input: $input, condition: $condition) {
+      id
+      entryDate
+      amountReceived
+      previousBalance
+      totalAmount
+      AmountPaid
+      AmountPaidTo
+      Balance
+      Remarks
+      partnerId
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
