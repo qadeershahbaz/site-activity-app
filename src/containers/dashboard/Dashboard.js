@@ -5,11 +5,13 @@ import {Link} from 'react-router-dom'
 let cards = [
   {
     title: "Partners",
-    url:'/partners'
+    url:'/partners',
+    src:process.env.PUBLIC_URL+'/partners.jpg'
   },
   {
     title: "Activities",
-    url:'/activity'
+    url:'/activity',
+    src:process.env.PUBLIC_URL+'/checklist.png'
   },
 ];
 
