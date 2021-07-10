@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+import { withAuthenticator } from "@aws-amplify/ui-react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import AppContainer from "./containers/app-container/AppContainer";
 import routes from "./app-routes/appRoutes";

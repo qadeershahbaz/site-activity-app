@@ -10,29 +10,8 @@ export const onCreateActivity = /* GraphQL */ `
       userID
       userName
       amount
-      document {
-        id
-        name
-        secret
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        owner
-      }
-      subActivities {
-        id
-        name
-        description
-        amount
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        owner
-      }
+      document
+      hasDocument
       _version
       _deleted
       _lastChangedAt
@@ -51,29 +30,8 @@ export const onUpdateActivity = /* GraphQL */ `
       userID
       userName
       amount
-      document {
-        id
-        name
-        secret
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        owner
-      }
-      subActivities {
-        id
-        name
-        description
-        amount
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        owner
-      }
+      document
+      hasDocument
       _version
       _deleted
       _lastChangedAt
@@ -92,122 +50,8 @@ export const onDeleteActivity = /* GraphQL */ `
       userID
       userName
       amount
-      document {
-        id
-        name
-        secret
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        owner
-      }
-      subActivities {
-        id
-        name
-        description
-        amount
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-        owner
-      }
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      owner
-    }
-  }
-`;
-export const onCreateSubActivity = /* GraphQL */ `
-  subscription OnCreateSubActivity {
-    onCreateSubActivity {
-      id
-      name
-      description
-      amount
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      owner
-    }
-  }
-`;
-export const onUpdateSubActivity = /* GraphQL */ `
-  subscription OnUpdateSubActivity {
-    onUpdateSubActivity {
-      id
-      name
-      description
-      amount
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      owner
-    }
-  }
-`;
-export const onDeleteSubActivity = /* GraphQL */ `
-  subscription OnDeleteSubActivity {
-    onDeleteSubActivity {
-      id
-      name
-      description
-      amount
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      owner
-    }
-  }
-`;
-export const onCreateDocument = /* GraphQL */ `
-  subscription OnCreateDocument {
-    onCreateDocument {
-      id
-      name
-      secret
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      owner
-    }
-  }
-`;
-export const onUpdateDocument = /* GraphQL */ `
-  subscription OnUpdateDocument {
-    onUpdateDocument {
-      id
-      name
-      secret
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-      owner
-    }
-  }
-`;
-export const onDeleteDocument = /* GraphQL */ `
-  subscription OnDeleteDocument {
-    onDeleteDocument {
-      id
-      name
-      secret
+      document
+      hasDocument
       _version
       _deleted
       _lastChangedAt

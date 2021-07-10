@@ -1,10 +1,11 @@
 import { Form, Button, Col } from "react-bootstrap";
 import {useForm} from 'react-hook-form'
 
-const AppForm = () => {
+const AppForm = (props) => {
+  const {handleFormSubmit} =props
   const { register, handleSubmit } = useForm({ shouldUseNativeValidation: true });
 
-  const onSubmit = async data => { console.log(data); };
+  const onSubmit = async data => {handleFormSubmit(data) };
   
   return (
     <Form onSubmit={handleSubmit(onSubmit)} >

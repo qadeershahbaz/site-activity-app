@@ -1,19 +1,30 @@
 import React, { useEffect, useState } from "react";
-import { API } from "aws-amplify";
+import { API ,Storage} from "aws-amplify";
 import { listActivities } from "../../../graphql/queries";
 import { withRouter, Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button,ListGroup } from "react-bootstrap";
+import DocViewer, { DocViewerRenderers } from 'react-doc-viewer'
+import './activity-list.scss'
 
 const ActivityList = () => {
   const [activities, setActivities] = useState([]);
+  const [document,setDocument]=useState()
 
-  useEffect(() => {
+  useEffect(async () => {
+    console.log('API')
+    console.log(await API.Auth.currentAuthenticatedUser())
     fetchActivites();
   }, []);
 
   async function fetchActivites() {
     const apiData = await API.graphql({ query: listActivities });
+   
     setActivities(apiData.data.listActivities.items);
+    // let data=apiData.data.listActivities.items
+    // let document=data[3].document[0]
+    let o_document=await Storage.get('edited excel sheet.csv')
+    console.log(o_document)
+    setDocument(o_document)
   }
 
   return (
@@ -25,12 +36,16 @@ const ActivityList = () => {
           </Button>
         </Link>
       </div>
+      <ListGroup>
       {activities.map((activity) => (
-        <div key={activity.id || activity.name}>
-          <h2>{activity.name}</h2>
-          <p>{activity.description}</p>
-        </div>
+       <ListGroup.Item>{activity.name}</ListGroup.Item>
       ))}
+  
+ 
+</ListGroup>
+{document&&<DocViewer sandbox={false} pluginRenderers={DocViewerRenderers} documents={[document]} style={{ height: 500}} />}
+{document&&<img src={document} style={{width: 400}} />}
+    
     </>
   );
 };

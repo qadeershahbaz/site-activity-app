@@ -5,24 +5,9 @@ type Activity @model @auth(rules: [{allow: private}, {allow: public}, {allow: ow
   userID: ID!
   userName: String!
   amount: Int
-  document: [Document]
-  subActivities: [SubActivity]
-  SubActivities: [SubActivity] @connection(keyName: "byActivity", fields: ["id"])
-  Documents: [Document] @connection(keyName: "byActivity", fields: ["id"])
+  document: [String]
+  hasDocument:Boolean
 }
 
-type SubActivity @model @auth(rules: [{allow: private}, {allow: public}, {allow: owner}]) @key(name: "byActivity", fields: ["activityID"]) {
-  id: ID!
-  name: String!
-  description: String
-  amount: Int
-  activityID: ID
-}
 
-type Document @model @auth(rules: [{allow: private}, {allow: public}, {allow: owner}]) @key(name: "byActivity", fields: ["activityID"]) {
-  id: ID!
-  name: String!
-  secret: Boolean
-  activityID: ID
-}
-  
+

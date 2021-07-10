@@ -32,7 +32,7 @@ const AppHeader = () => {
       <Navbar
         expand="lg"
         fixed="top"
-        style={{ top: "56px", background: "#8CA3B2", zIndex: 0 }}
+        style={{ top: "56px", background: "#8CA3B2", zIndex: 1029 }}
       >
         <Container style={{ color: "white" }}>
           <AppBreadcrumb onBreadcrumbItemClick={onBreadcrumbItemClick} />

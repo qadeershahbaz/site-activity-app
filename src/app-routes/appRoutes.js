@@ -12,6 +12,11 @@ const routes = [
     name: "Add Activity",
     Component: AddActivity,
   },
+  {
+    path:'partners',
+    name: 'Partners',
+    Component:ActivityList
+  }
 ];
 
 export default routes

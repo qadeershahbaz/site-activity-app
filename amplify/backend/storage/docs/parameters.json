@@ -1,5 +1,5 @@
 {
-    "bucketName": "siteactivityappb823eba102d74e6dbd53c63674f38ad0",
+    "bucketName": "app-doc-aws",
     "authPolicyName": "s3_amplify_b63dd67c",
     "unauthPolicyName": "s3_amplify_b63dd67c",
     "authRoleName": {
