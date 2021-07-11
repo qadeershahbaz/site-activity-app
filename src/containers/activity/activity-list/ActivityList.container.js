@@ -4,6 +4,7 @@ import { listActivities } from "../../../graphql/queries";
 import { withRouter, Link } from "react-router-dom";
 import { Button, ListGroupItem } from "react-bootstrap";
 import AppList from "../../../components/app-list/AppList";
+import DocViewer, { DocViewerRenderers } from "react-doc-viewer";
 import "./activity-list.scss";
 
 const ActivityList = () => {
@@ -32,10 +33,13 @@ const ActivityList = () => {
         </Link>
       </div>
       <AppList>
-        {activities.map((activity) => (
-          <ListGroupItem>{activity.name}</ListGroupItem>
+        {activities.map((activity, index) => (
+          <ListGroupItem key={index + Math.random()}>
+            {activity.name}
+          </ListGroupItem>
         ))}
       </AppList>
+     {document&& <DocViewer pluginRenderers={DocViewerRenderers} documents={[document]}/>};
       {document && <img src={document} style={{ width: 400 }} />}
     </>
   );

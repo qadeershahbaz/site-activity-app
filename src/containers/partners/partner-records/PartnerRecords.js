@@ -46,7 +46,7 @@ const PartnerRecords = (props) => {
         </Button>
       </Link>
       {partnerRecords.map((i) => (
-        <ListGroupItem key={i.entryDate}>
+        <ListGroupItem key={i.entryDate+Math.random()}>
          <RecordContainer {...i}/>
         </ListGroupItem>
       ))}
