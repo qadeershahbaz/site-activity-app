@@ -1,6 +1,39 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getPartnerRecordsByPartnerId = /* GraphQL */ `
+  query GetPartnerRecordsByPartnerId(
+    $partnerId: ID!
+    $limit: Int
+    $nextToken: String
+  ) {
+    getPartnerRecordsByPartnerId(
+      partnerId: $partnerId
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        entryDate
+        amountReceived
+        previousBalance
+        totalAmount
+        amountPaid
+        amountPaidTo
+        balance
+        remarks
+        partnerId
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+`;
 export const getActivity = /* GraphQL */ `
   query GetActivity($id: ID!) {
     getActivity(id: $id) {
@@ -158,10 +191,10 @@ export const getPartnerRecords = /* GraphQL */ `
       amountReceived
       previousBalance
       totalAmount
-      AmountPaid
-      AmountPaidTo
-      Balance
-      Remarks
+      amountPaid
+      amountPaidTo
+      balance
+      remarks
       partnerId
       _version
       _deleted
@@ -185,10 +218,10 @@ export const listPartnerRecords = /* GraphQL */ `
         amountReceived
         previousBalance
         totalAmount
-        AmountPaid
-        AmountPaidTo
-        Balance
-        Remarks
+        amountPaid
+        amountPaidTo
+        balance
+        remarks
         partnerId
         _version
         _deleted
@@ -221,10 +254,10 @@ export const syncPartnerRecords = /* GraphQL */ `
         amountReceived
         previousBalance
         totalAmount
-        AmountPaid
-        AmountPaidTo
-        Balance
-        Remarks
+        amountPaid
+        amountPaidTo
+        balance
+        remarks
         partnerId
         _version
         _deleted

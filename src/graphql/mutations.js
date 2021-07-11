@@ -135,10 +135,10 @@ export const createPartnerRecords = /* GraphQL */ `
       amountReceived
       previousBalance
       totalAmount
-      AmountPaid
-      AmountPaidTo
-      Balance
-      Remarks
+      amountPaid
+      amountPaidTo
+      balance
+      remarks
       partnerId
       _version
       _deleted
@@ -160,10 +160,10 @@ export const updatePartnerRecords = /* GraphQL */ `
       amountReceived
       previousBalance
       totalAmount
-      AmountPaid
-      AmountPaidTo
-      Balance
-      Remarks
+      amountPaid
+      amountPaidTo
+      balance
+      remarks
       partnerId
       _version
       _deleted
@@ -185,10 +185,10 @@ export const deletePartnerRecords = /* GraphQL */ `
       amountReceived
       previousBalance
       totalAmount
-      AmountPaid
-      AmountPaidTo
-      Balance
-      Remarks
+      amountPaid
+      amountPaidTo
+      balance
+      remarks
       partnerId
       _version
       _deleted

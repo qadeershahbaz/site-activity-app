@@ -8,7 +8,7 @@ import "./app-container.styles.scss";
 const AppContainer = (props) => {
   const { children } = props;
   const {pathname}=useLocation()
-  console.log(pathname)
+
 
   return (
     <>

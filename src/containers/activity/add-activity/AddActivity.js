@@ -28,13 +28,13 @@ const AddActivity = () => {
       userName: username,
       userID,
     };
-    console.log(postData);
+ 
 
     let res = await API.graphql({
       query: createActivity,
       variables: { input: postData },
     });
-    console.log(res);
+  
     
 history.push('/activity')
    

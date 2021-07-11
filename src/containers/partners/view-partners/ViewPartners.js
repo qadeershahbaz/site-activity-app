@@ -13,7 +13,7 @@ const ViewPartners = () => {
 
   async function fetchPartners() {
     const apiData = await API.graphql({ query: listPartners });
-    console.log(apiData.data.listPartners.items);
+    
 
     setPartners(apiData.data.listPartners.items);
   }
@@ -23,7 +23,7 @@ const ViewPartners = () => {
 
     <AppList>
       {partners.map(({ id, name }) => (
-        <Link to={{pathname: `/partners/partner-records/${name}`,state:{id}}} >
+        <Link to={{pathname: `/partners/partner-records/${name}`,state:{id}}} key={id} >
           {" "}
           <ListGroupItem>{name}</ListGroupItem>
         </Link>

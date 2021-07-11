@@ -17,7 +17,7 @@ function App() {
 
         {routes.map(({ path, name, Component }, key) => {
           
-          return <Route exact path={path} component={Component} />;
+          return <Route exact path={path} component={Component} key={key}/>;
         })}
 
         

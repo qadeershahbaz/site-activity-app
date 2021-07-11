@@ -22,11 +22,21 @@ type PartnerRecords @model @auth(rules: [{allow: private}, {allow: public}, {all
   amountReceived:Float!
   previousBalance:Float!
   totalAmount:Float!
-  AmountPaid:Float!
-  AmountPaidTo:String
-  Balance:Float!
-  Remarks:String
+  amountPaid:Float!
+  amountPaidTo:String
+  balance:Float!
+  remarks:String
   partnerId:ID!
 }
 
+
+
+type PartnerRecordsConnection  {
+  items: [PartnerRecords]
+  nextToken: String
+}
+
+type Query {
+  getPartnerRecordsByPartnerId(partnerId: ID!, limit: Int, nextToken: String): PartnerRecordsConnection
+}
 

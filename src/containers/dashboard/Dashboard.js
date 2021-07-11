@@ -19,7 +19,7 @@ const Dashboard = () => {
   return (
     <>
       {cards.map((i) => (
-       <Link to={i.url}> <AppCard {...i} /></Link>
+       <Link to={i.url} key={i.title}> <AppCard {...i} /></Link>
       ))}
     </>
   );

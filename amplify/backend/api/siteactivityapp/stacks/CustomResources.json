@@ -30,7 +30,45 @@
     "EmptyResource": {
       "Type": "Custom::EmptyResource",
       "Condition": "AlwaysFalse"
-    }
+    },
+    "CustomQueryForGetRecordsByPartnerId": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+          "ApiId": {
+              "Ref": "AppSyncApiId"
+          },
+          "DataSourceName": "PartnerRecordsTable",
+          "TypeName": "Query",
+          "FieldName": "getPartnerRecordsByPartnerId",
+          "RequestMappingTemplateS3Location": {
+              "Fn::Sub": [
+                  "s3://${S3DeploymentBucket}/${S3DeploymentRootKey}/resolvers/Query.getPartnerRecordsByPartnerId.req.vtl",
+                  {
+                      "S3DeploymentBucket": {
+                          "Ref": "S3DeploymentBucket"
+                      },
+                      "S3DeploymentRootKey": {
+                          "Ref": "S3DeploymentRootKey"
+                      }
+                  }
+              ]
+          },
+          "ResponseMappingTemplateS3Location": {
+              "Fn::Sub": [
+                  "s3://${S3DeploymentBucket}/${S3DeploymentRootKey}/resolvers/Query.getPartnerRecordsByPartnerId.res.vtl",
+                  {
+                      "S3DeploymentBucket": {
+                          "Ref": "S3DeploymentBucket"
+                      },
+                      "S3DeploymentRootKey": {
+                          "Ref": "S3DeploymentRootKey"
+                      }
+                  }
+              ]
+          }
+      }
+  }
+    
   },
   "Conditions": {
     "HasEnvironmentParameter": {
