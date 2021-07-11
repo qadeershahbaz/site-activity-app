@@ -23,7 +23,7 @@ const ViewPartners = () => {
 
     <AppList>
       {partners.map(({ id, name }) => (
-        <Link to={{pathname: `/partners/partner-records/${name}`,state:{id}}} key={id} >
+        <Link to={{pathname: `/partners/${name}`,state:{id}}} key={id} >
           {" "}
           <ListGroupItem>{name}</ListGroupItem>
         </Link>

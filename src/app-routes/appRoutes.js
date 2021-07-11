@@ -22,12 +22,12 @@ const routes = [
     Component: ViewPartners,
   },
   {
-    path: "/partners/partner-records/:partnerId",
+    path: "/partners/:partnerId",
     name: "Partner Records",
     Component: PartnerRecords,
   },
   {
-    path: "/partners/partner-records/:partnerId/add-partner-record",
+    path: "/partners/:partnerId/add-partner-record",
     name: "Add Partner Records",
     Component: AddPartnerRecord,
   },

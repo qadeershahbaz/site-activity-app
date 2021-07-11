@@ -44,7 +44,7 @@ const AddPartnerRecord = (props) => {
     });
 
     if (res) {
-      history.push({pathname: `/partners/partner-records/${partnerId}`,state:{id}});
+      history.push({pathname: `/partners/${partnerId}`,state:{id}});
     }
   };
 

@@ -35,7 +35,7 @@ const PartnerRecords = (props) => {
       {" "}
       <Link
         to={{
-          pathname: `/partners/partner-records/${partnerId}/add-partner-record`,
+          pathname: `/partners/${partnerId}/add-partner-record`,
           state: { id },
         }}
       >
