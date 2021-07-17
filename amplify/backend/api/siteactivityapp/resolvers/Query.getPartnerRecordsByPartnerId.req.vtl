@@ -15,8 +15,8 @@
         }
     }
   },
-  "scanIndexForward": true,
+  "scanIndexForward": false,
   "limit": $limit,
   "nextToken": #if( $context.args.nextToken ) "$context.args.nextToken" #else null #end,
-  "index":"partnerId-index"
+  "index":"partnerId-entryDate-index"
 }

@@ -57,12 +57,17 @@ const RecordContainer = (props) => {
           {" "}
           <div>
             <div className="label"> Balance</div>
-            <div>{balance}</div>
+            <div style={balanceStyle} >{balance}</div>
           </div>
         </Col>
       </Row>
     </Container>
   );
 };
+
+const balanceStyle={
+  color: 'green',
+  fontWeight: 600
+}
 
 export default RecordContainer;

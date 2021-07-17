@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { withRouter, Link, useHistory, useParams } from "react-router-dom";
-import { API } from "aws-amplify";
-import { getPartnerRecordsByPartnerId } from "../../../graphql/queries";
+
 import { ListGroupItem } from "react-bootstrap";
 import RecordContainer from "./RecordContainer";
+import {fetchPartnerRecords} from '../services/partner-services'
 
 const PartnerRecords = (props) => {
   const [partnerRecords, setPartnerRecords] = useState([]);
@@ -17,18 +17,12 @@ const PartnerRecords = (props) => {
   const params = useParams();
   const { partnerId } = params;
 
-  useEffect(() => {
-    fetchPartnerRecords();
+  useEffect(async() => {
+   let apiData=await fetchPartnerRecords(id,10);
+   setPartnerRecords(apiData?.data?.getPartnerRecordsByPartnerId.items || []);
   }, []);
 
-  async function fetchPartnerRecords() {
-    const apiData = await API.graphql({
-      query: getPartnerRecordsByPartnerId,
-      variables: { partnerId: id },
-    });
-
-    setPartnerRecords(apiData.data.getPartnerRecordsByPartnerId.items || []);
-  }
+ 
 
   return (
     <div>
@@ -46,8 +40,8 @@ const PartnerRecords = (props) => {
         </Button>
       </Link>
       {partnerRecords.map((i) => (
-        <ListGroupItem key={i.entryDate+Math.random()}>
-         <RecordContainer {...i}/>
+        <ListGroupItem key={i.entryDate + Math.random()}>
+          <RecordContainer {...i} />
         </ListGroupItem>
       ))}
     </div>
