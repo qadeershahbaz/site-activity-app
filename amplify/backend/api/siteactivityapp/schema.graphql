@@ -18,7 +18,7 @@ type Partners  @model @auth(rules: [{allow: private}, {allow: public}, {allow: o
 
 type PartnerRecords @model @auth(rules: [{allow: private}, {allow: public}, {allow: owner}]) {
   id: ID!
-  entryDate: AWSDate!
+  entryDate: AWSDateTime!
   amountReceived:Float!
   previousBalance:Float!
   totalAmount:Float!

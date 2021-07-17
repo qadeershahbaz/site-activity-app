@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col, Container } from "react-bootstrap";
-import './record-container.styles.scss'
-
+import moment from "moment";
+import "./record-container.styles.scss";
 
 const RecordContainer = (props) => {
   const {
@@ -18,7 +18,7 @@ const RecordContainer = (props) => {
         <Col xs={6}>
           <div>
             <div className="label"> Date</div>
-            <div>{entryDate}</div>
+            <div>{moment(entryDate).format("LL")}</div>
           </div>
         </Col>
         <Col xs={{ span: 6 }}>
@@ -57,7 +57,7 @@ const RecordContainer = (props) => {
           {" "}
           <div>
             <div className="label"> Balance</div>
-            <div style={balanceStyle} >{balance}</div>
+            <div style={balanceStyle(balance)}>{balance}</div>
           </div>
         </Col>
       </Row>
@@ -65,9 +65,20 @@ const RecordContainer = (props) => {
   );
 };
 
-const balanceStyle={
-  color: 'green',
-  fontWeight: 600
-}
+const balanceStyle = (balance) => {
+  if(balance>0){
+    return {
+      color: "green",
+      fontWeight: 600,
+    };
+  }
+  else{
+    return {
+      color: "red",
+      fontWeight: 600,
+    };
+  }
+ 
+};
 
 export default RecordContainer;

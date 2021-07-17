@@ -55,7 +55,7 @@ const PartnerRecordForm = (props) => {
         <DatePicker
           mode="date"
           onChange={(entryDate) =>
-            setValue("entryDate", moment(entryDate).format("YYYY-MM-DD"))
+            setValue("entryDate", moment(entryDate).format("YYYY-MM-DD,h:mm:ss a"))
           }
         >
           <Form.Control

@@ -22,7 +22,7 @@ const AddPartnerRecord = (props) => {
     let apiData = await fetchPartnerRecords(id, 1);
     let partnerRecord = apiData?.data?.getPartnerRecordsByPartnerId.items[0];
     console.log(partnerRecord)
-    const { balance = 0, entryDate = moment("2001-01-01") } =
+    const { balance = 0, entryDate = moment("2001-01-01").format("YYYY-MM-DD") } =
       partnerRecord || {};
     let _previousRecord = {
       previousBalance:balance,
@@ -33,7 +33,7 @@ const AddPartnerRecord = (props) => {
 
   const handleSubmit = async (data) => {
     const {
-       entryDate,
+      entryDate,
       amountReceived,
       previousBalance,
       totalAmount,
@@ -43,7 +43,7 @@ const AddPartnerRecord = (props) => {
     } = data;
 
     let postData = {
-      entryDate,
+      entryDate:new Date(entryDate).toISOString(),
       amountReceived,
       amountPaid,
       totalAmount,
