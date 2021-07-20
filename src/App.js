@@ -9,7 +9,7 @@ import routes from "./app-routes/appRoutes";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App"  style={AppStyle} >
       <AppContainer>
         <Route exact path="/">
           <Redirect to="/dashboard" />
@@ -24,6 +24,11 @@ function App() {
       </AppContainer>
     </div>
   );
+}
+
+const AppStyle={
+  background: "url(/bg.jpg) no-repeat center center fixed",
+  backgroundSize: "cover"
 }
 
 export default withAuthenticator(App);
