@@ -6,12 +6,12 @@ let cards = [
   {
     title: "Partners",
     url:'/partners',
-    src:process.env.PUBLIC_URL+'/partners.jpg'
+    src:process.env.PUBLIC_URL+'/hands.jpg'
   },
   {
     title: "Activities",
     url:'/activity',
-    src:process.env.PUBLIC_URL+'/checklist.png'
+    src:process.env.PUBLIC_URL+'/invoice.png'
   },
 ];
 

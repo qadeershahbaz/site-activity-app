@@ -7,6 +7,11 @@
 }
 
 .card{
-    background: #576B77;
+    background: transparent;
+    border: none;
     margin-bottom: 6px;
+}
+
+.card-img, .card-img-top{
+    border-radius: 43px;
 }
