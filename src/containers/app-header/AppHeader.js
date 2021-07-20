@@ -14,7 +14,7 @@ const AppHeader = () => {
         collapseOnSelect
         expand="lg"
         fixed="top"
-        style={{ background: "#576B77" }}
+        style={{ background: "darkblue" }}
       >
         <Container style={{ textAlign: "center" }}>
           <Link to='/'><Navbar.Brand>Site Activity</Navbar.Brand></Link>
@@ -33,7 +33,7 @@ const AppHeader = () => {
       <Navbar
         expand="lg"
         fixed="top"
-        style={{ top: "56px", background: "#8CA3B2", zIndex: 1029 }}
+        style={{ top: "56px", background: "cornflowerblue", zIndex: 1029 }}
       >
         <Container style={{ color: "white" }}>
           <AppBreadcrumb onBreadcrumbItemClick={onBreadcrumbItemClick} />
